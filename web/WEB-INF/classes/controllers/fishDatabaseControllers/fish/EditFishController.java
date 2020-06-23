@@ -52,10 +52,7 @@ public class EditFishController extends HttpServlet {
             String tank_id = request.getParameter("tank_id");
             String description = request.getParameter("description");
             String image_url = request.getParameter("image_url");
-            if(image_url.equals("")){
-                image_url = request.getContextPath()+"/static/images/fishDatabase/Fish.png";
-            }
-            else if(image_url.contains("https://drive.google.com/file/d/")){
+            if(image_url.contains("https://drive.google.com/file/d/")){
                 image_url = image_url.substring(image_url.indexOf("/d/")+3, image_url.indexOf("/view"));
                 image_url = "https://drive.google.com/uc?id=" + image_url;
             }

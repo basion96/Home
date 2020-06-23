@@ -59,9 +59,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col">
-                                        <img src="${tank.image_url}" class="img-thumbnail">
-                                    </div>
+                                    <c:if test="${tank.image_url != \"\"}">
+                                        <div class="col">
+                                            <img src="${tank.image_url}" class="img-thumbnail">
+                                        </div>
+                                    </c:if>
                                     <div class="col">
                                         <!-- tank info -->
                                         <h4 class="card-title"><c:out value="${tank.tank_name}"/></h4>

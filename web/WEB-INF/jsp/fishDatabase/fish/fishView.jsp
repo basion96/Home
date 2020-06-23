@@ -64,9 +64,11 @@
                         <div style="background-color: #53E89E" class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col">
-                                        <img src="${fish.image_url}" alt="${fish.image_url}" class="img-thumbnail">
-                                    </div>
+                                    <c:if test="${fish.image_url != \"\"}">
+                                        <div class="col">
+                                            <img src="${fish.image_url}" alt="${fish.image_url}" class="img-thumbnail">
+                                        </div>
+                                    </c:if>
                                     <div class="col">
                                         <!--Displays the current fish details-->
                                         <h4 class="card-title"><c:out value="${fish.fish_name}"/></h4>
