@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+<!--
+    <security-constraint>
+    	<web-resource-collection>
+    		<web-resource-name>Must Log In</web-resource-name>
+    		<url-pattern>/*</url-pattern>
+    	</web-resource-collection>
+    	<auth-constraint>
+    		<role-name>USER</role-name>
+    	</auth-constraint>
+    </security-constraint>
+    
+    <login-config>
+    	<auth-method>FORM</auth-method>
+    	<realm-name>User</realm-name>
+    	<form-login-config>
+    		<form-login-page>/login.jsp</form-login-page>
+    		<form-error-page>/loginFail.jsp</form-error-page>
+    	</form-login-config>
+    </login-config>
+
+    <security-role>
+        <description>Role for user/student person</description>
+    	<role-name>USER</role-name>
+    </security-role>
+    <security-role>
+        <description>Role for a it staff person</description>
+    	<role-name>ITSTAFF</role-name>
+    </security-role>
+-->
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- mappings for aquarium pages -->
+    <servlet>
+        <servlet-name>aquariums</servlet-name>
+        <jsp-file>/WEB-INF/jsp/fishDatabase/aquariums.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>aquariums</servlet-name>
+        <url-pattern>/aquariums</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- navbar for each page -->
+    <servlet>
+        <servlet-name>navbar</servlet-name>
+        <jsp-file>/WEB-INF/jsp/includes/navbar.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>navbar</servlet-name>
+        <url-pattern>/navbar</url-pattern>
+    </servlet-mapping>
+
+    <!-- mapping error pages -->
+    <servlet>
+        <servlet-name>404</servlet-name>
+        <jsp-file>/WEB-INF/jsp/errors/404.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>404</servlet-name>
+        <url-pattern>/404</url-pattern>
+    </servlet-mapping>
+
+
+    <error-page>
+    <error-code>403</error-code>
+    <location>/WEB-INF/jsp/errors/403.jsp</location>
+  </error-page>
+    <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/jsp/errors/404.jsp</location>
+  </error-page>
+
+</web-app>

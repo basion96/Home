@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="8b2401e0-f170-4dd6-9b21-ece974aba454" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="0e1b2a74-3aec-4db8-8cd3-98535f835f98" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="2ef8d95e-1ca5-4363-a7c1-c49d5452d7e6" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+    </configs>
+  </component>
+</project>
