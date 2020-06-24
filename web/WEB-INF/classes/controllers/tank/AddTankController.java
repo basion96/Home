@@ -1,4 +1,4 @@
-package controllers.fishDatabaseControllers.tank;
+package controllers.tank;
 
 import objects.Category;
 import database.FishDatabase;

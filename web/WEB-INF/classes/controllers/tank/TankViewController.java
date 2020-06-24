@@ -1,6 +1,8 @@
-package controllers.fishDatabaseControllers.fish;
+package controllers.tank;
 
 import database.FishDatabase;
+import objects.Fish;
+import objects.Tank;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,13 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet("/aquariums/fish")
-public class FishViewController extends HttpServlet {
+@WebServlet("/aquariums/tanks")
+public class TankViewController extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         FishDatabase fishDB = new FishDatabase();
-        ArrayList fish = fishDB.getFish();
+        ArrayList<Tank> tanks = fishDB.getTanks();
+        ArrayList<Fish> fish = fishDB.getFish();
         request.setAttribute("fish", fish);
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/fishDatabase/fish/fishView.jsp");
+        request.setAttribute("tanks", tanks);
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/fishDatabase/tanks/tankView.jsp");
         rd.forward(request, response);
     }
 
