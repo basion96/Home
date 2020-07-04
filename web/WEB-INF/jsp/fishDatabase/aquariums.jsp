@@ -17,9 +17,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <title>Aquariums</title>
+        <jsp:include page="/navbar"/>
     </head>
     <body>
-        <jsp:include page="/navbar"/>
         <div class="jumbotron">
             <h1>Aquariums</h1>
             <p>

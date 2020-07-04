@@ -17,17 +17,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <title>Add Fish</title>
+        <jsp:include page="/navbar"/>
     </head>
     <body>
-        <jsp:include page="/navbar"/>
         <div class="jumbotron">
             <h1>Add Fish</h1>
         </div>
         <div class="container">
             <form action="${pageContext.request.contextPath}/aquariums/addFish" method="post">
                 <div class="form-group">
-                    <label class="mr-sm-2" for="type">Name:</label>
-                    <input type="text" id="type" name="type" class="form-control" required="true" maxlength="50">
+                    <label class="mr-sm-2" for="fish_name">Name:</label>
+                    <input type="text" id="fish_name" name="fish_name" class="form-control" required="true" maxlength="50">
                 </div>
                 <div class="form-group">
                     <label class="mr-sm-2" for="sex">Sex:</label>

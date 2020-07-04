@@ -32,18 +32,25 @@ public class AddFishController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         FishDatabase fishDB = new FishDatabase();
-        String type = request.getParameter("type");
+        //name
+        String fish_name = request.getParameter("fish_name");
+        //sex
         String sex = request.getParameter("sex");
+        //amount
         int amount = Integer.parseInt(request.getParameter("amount"));
+        //tank id
         String tank_id = request.getParameter("tank_id");
+        //description
         String description = request.getParameter("description");
+
+        //image and altering image url
         String image_url = request.getParameter("image_url");
         if(image_url.contains("https://drive.google.com/file/d/")){
             image_url = image_url.substring(image_url.indexOf("/d/")+3, image_url.indexOf("/view"));
             image_url = "https://drive.google.com/uc?id=" + image_url;
         }
 
-        fishDB.addFish(type, sex, amount, tank_id, image_url, description);
+        fishDB.addFish(fish_name, sex, amount, tank_id, image_url, description);
         response.sendRedirect(request.getContextPath()+"/aquariums/fish?status=added");
     }
 }

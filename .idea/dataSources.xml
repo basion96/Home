@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="NoodleGrill" uuid="c7a7d687-55c5-44dc-8803-2c9cf3359ec4">
+    <data-source source="LOCAL" name="NoodleGrill - fish_database" uuid="c7a7d687-55c5-44dc-8803-2c9cf3359ec4">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://10.0.0.171:3306/houseDB</jdbc-url>
+      <jdbc-url>jdbc:mariadb://10.0.0.171:3306/fish_database</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="NoodleGrill - hardware_database" uuid="730cdbb2-18d4-4e91-8765-a632c63fab30">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://10.0.0.171:3306/hardware_database</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="NoodleGrill - finance_database" uuid="4a47d87d-48bf-4d24-8a64-387572f11e8e">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://10.0.0.171:3306/finance_database</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="NoodleGrill - user_store" uuid="af93c1ec-f10b-4f03-beb2-903bde48a5ee">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://10.0.0.171:3306/user_store</jdbc-url>
     </data-source>
   </component>
 </project>

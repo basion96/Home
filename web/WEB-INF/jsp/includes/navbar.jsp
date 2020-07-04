@@ -8,10 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/favicon.jpg"/>
     </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/home">Home</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,7 +40,6 @@
                         <a class="dropdown-item" href="#">RAM</a>
                         <a class="dropdown-item" href="#">Power supplies</a>
                         <a class="dropdown-item" href="#">Hard drives</a>
-
                     </div>
                 </li>
             </ul>

@@ -15,7 +15,7 @@ public class FishDatabase extends DAO {
     private String noTank = "No associated tank";
 
     public void addFish(String type, String sex, int amount, String tank_id, String image_url, String description) {
-        try(Connection conn = getConnection()) {
+        try(Connection conn = getConnection(Database.FISH_DATABASE)) {
             PreparedStatement statement = conn.prepareStatement("CALL add_fish(?,?,?,?,?,?)");
             statement.setString(1, type);
             statement.setString(2, sex);
@@ -39,7 +39,7 @@ public class FishDatabase extends DAO {
 
     public Fish getSingleFish(int fish_id){
         Fish fish = null;
-        try(Connection conn = getConnection()){
+        try(Connection conn = getConnection(Database.FISH_DATABASE)){
             PreparedStatement statement = conn.prepareStatement("SELECT * FROM fish WHERE fish_id = ?");
             statement.setInt(1, fish_id);
             ResultSet rs = statement.executeQuery();
@@ -75,7 +75,7 @@ public class FishDatabase extends DAO {
     }
 
     public void updateFish(int fish_id, String fish_name, String sex, int amount, String tank_id, String image_url, String description, boolean deleteFish){
-        Connection conn = getConnection();
+        Connection conn = getConnection(Database.FISH_DATABASE);
         if(deleteFish){
             try{
                 PreparedStatement statement = conn.prepareStatement("CALL delete_fish(?)");
@@ -113,7 +113,7 @@ public class FishDatabase extends DAO {
 
     public int getNumberFishInTank(int tank_id){
         int numberFish = -1;
-        try(Connection conn = getConnection()) {
+        try(Connection conn = getConnection(Database.FISH_DATABASE)) {
             PreparedStatement statement = conn.prepareStatement("SELECT COUNT(amount) FROM fish WHERE tank_id = ?");
             statement.setInt(1, tank_id);
             ResultSet rs = statement.executeQuery();
@@ -130,7 +130,7 @@ public class FishDatabase extends DAO {
     }
 
     public void addTank(String name, int tank_size, int water_type, int water_temperature, String description, String image_url){
-        Connection conn = getConnection();
+        Connection conn = getConnection(Database.FISH_DATABASE);
         try {
             PreparedStatement statement = conn.prepareStatement("CALL add_tank(?,?,?,?,?,?)");
             statement.setString(1, name);
@@ -149,7 +149,7 @@ public class FishDatabase extends DAO {
 
     public ArrayList<Fish> getFish() {
         ArrayList<Fish> fish = new ArrayList<>();
-        Connection conn = getConnection();
+        Connection conn = getConnection(Database.FISH_DATABASE);
         try {
             PreparedStatement getfish = conn.prepareStatement("SELECT * FROM fish");
             ResultSet rs = getfish.executeQuery();
@@ -190,7 +190,7 @@ public class FishDatabase extends DAO {
 
     public ArrayList<Tank> getTanks(){
         ArrayList<Tank> tanks = new ArrayList<>();
-        Connection conn = getConnection();
+        Connection conn = getConnection(Database.FISH_DATABASE);
 
         try{
             PreparedStatement getTanks = conn.prepareStatement("SELECT * FROM fish_tanks");
@@ -247,7 +247,7 @@ public class FishDatabase extends DAO {
     }
 
     public void updateTank(int tank_id, String tank_name, int tank_size, int water_type, int water_temperature, String description, String image_url, boolean deleteTank){
-        Connection conn = getConnection();
+        Connection conn = getConnection(Database.FISH_DATABASE);
         if(deleteTank){
             try{
                 PreparedStatement statement = conn.prepareStatement("CALL delete_tank(?)");
@@ -280,7 +280,7 @@ public class FishDatabase extends DAO {
     public Tank getSingleTank(int tankid) {
         Tank tank = null;
 
-        try (Connection conn = getConnection()){
+        try (Connection conn = getConnection(Database.FISH_DATABASE)){
             PreparedStatement statement = conn.prepareStatement("SELECT * FROM fish_tanks WHERE tank_id = ?");
             statement.setInt(1, tankid);
             ResultSet rs = statement.executeQuery();
@@ -326,7 +326,7 @@ public class FishDatabase extends DAO {
     public List<Category> getTankList() throws SQLException {
         List<Category> listCategory = new ArrayList<>();
 
-        try (Connection conn = getConnection()) {
+        try (Connection conn = getConnection(Database.FISH_DATABASE)) {
             PreparedStatement statement = conn.prepareStatement("SELECT * FROM fish_tanks ORDER BY tank_id");
             ResultSet result = statement.executeQuery();
 
@@ -351,7 +351,7 @@ public class FishDatabase extends DAO {
     public List<Category> getWaterTypeList() throws SQLException {
         List<Category> waterTypes = new ArrayList<>();
 
-        try (Connection conn = getConnection()) {
+        try (Connection conn = getConnection(Database.FISH_DATABASE)) {
             PreparedStatement statement = conn.prepareStatement("SELECT * FROM water_types ORDER BY water_type_id");
             ResultSet result = statement.executeQuery();
 
@@ -376,7 +376,7 @@ public class FishDatabase extends DAO {
     public List<Category> getWaterTemperatureTypeList() throws SQLException {
         List<Category> waterTemperatureTypes = new ArrayList<>();
 
-        try (Connection conn = getConnection()) {
+        try (Connection conn = getConnection(Database.FISH_DATABASE)) {
             PreparedStatement statement = conn.prepareStatement("SELECT * FROM water_temperature_types ORDER BY water_temperature_type_id");
             ResultSet result = statement.executeQuery();
 
@@ -398,7 +398,7 @@ public class FishDatabase extends DAO {
 
     public int getNumberOfTanks(){
         int numnTanks = 0;
-        try(Connection conn = getConnection()){
+        try(Connection conn = getConnection(Database.FISH_DATABASE)){
             PreparedStatement statement = conn.prepareStatement("SELECT count_tanks()");
             statement.executeQuery();
             System.out.println();
