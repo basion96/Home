@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DAO {
     protected Connection getConnection(Database database) {
 
-        String db = "";
+        String db = null;
         switch (database){
             case FISH_DATABASE: db = "houseDB";
                 break;
@@ -17,7 +17,7 @@ public class DAO {
                 break;
             case FINANCE_DATABASE: db = "finance_database";
                 break;
-            case USER_STORE: db = "user_store";
+            case USER_STORE: db = "user-store";
         }
 
         DataSource datasource;

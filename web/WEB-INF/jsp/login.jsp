@@ -7,7 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-    <head>
+    <head><meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <jsp:include page="/navbar"/>
         <title>Login</title>
     </head>
     <body>
@@ -15,20 +22,17 @@
             <h1>Login</h1>
         </div>
 
-        <!--Creates a form that allows the user to enter their login details. On submission, their details are validated-->
         <div class="container">
-            <form class="form-horizontal" action="j_security_check" method="POST">
+            <form action="j_security_check" method="POST">
                 <div class="form-group">
-                    <label for="email">Username:</label>
-                    <input type="text" class="form-control" id="email" name="j_username" required="true">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="j_username" required="true" aria-describedby="emailHelp" placeholder="Enter username">
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" name="j_password" required="true">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="j_password" placeholder="Password">
                 </div>
-
-                <!--Generates a button that is used to submit the form-->
-                <button type="submit" class="btn btn-primary">Log In</button>
+                <button type="submit" class="btn btn-primary">log in</button>
             </form>
         </div>
     </body>
