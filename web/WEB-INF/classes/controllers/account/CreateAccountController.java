@@ -1,6 +1,6 @@
 package controllers.account;
 
-import database.AccountDatabase;
+import controllers.authentication.UserAuthenticator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,23 +13,19 @@ import java.io.IOException;
 @WebServlet("/createAccount")
 public class CreateAccountController extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/createAccount.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user/createAccount.jsp");
         dispatcher.forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
-
-
-        AccountDatabase accDB = new AccountDatabase();
-        if(accDB.checkIfUsernameAvailable(request.getParameter("username"))){
+        UserAuthenticator accDB = new UserAuthenticator();
+        if(!accDB.usernameExists(request.getParameter("username"), true)){
             accDB.insertPendingUser(request.getParameter("username"), request.getParameter("password"));
-            response.sendRedirect(request.getContextPath() + "/?status=pending");
+            response.sendRedirect(request.getContextPath() + "/index?status=pending");
         }
         else{
             request.setAttribute("username", request.getParameter("username"));
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/createAccount.jsp?error=1");
-            dispatcher.forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/createAccount?error=1");
         }
     }
 }

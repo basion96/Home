@@ -4,50 +4,44 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
+<!--
+    <listener>
+        <listener-class>test.DiscordBot</listener-class>
+    </listener>
+-->
 
-    <security-constraint>
-    	<web-resource-collection>
-    		<web-resource-name>Must Log In</web-resource-name>
-    		<url-pattern>/finance/*</url-pattern>
-    	</web-resource-collection>
-    	<auth-constraint>
-    		<role-name>admin</role-name>
-    	</auth-constraint>
-    </security-constraint>
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>filters.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Must Log In</web-resource-name>
-            <url-pattern>/loginPage</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>admin</role-name>
-            <role-name>basic</role-name>
-        </auth-constraint>
-    </security-constraint>
+    <filter>
+        <filter-name>userRoleFilter</filter-name>
+        <filter-class>filters.UserRoleFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>userRoleFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-    <login-config>
-        <auth-method>FORM</auth-method>
-        <realm-name>user-store</realm-name>
-        <form-login-config>
-            <form-login-page>/WEB-INF/jsp/login.jsp</form-login-page>
-            <form-error-page>/WEB-INF/jsp/loginFail.jsp</form-error-page>
-        </form-login-config>
-    </login-config>
-
-    <security-role>
-        <description>Role for admin</description>
-    	<role-name>admin</role-name>
-    </security-role>
-
-    <security-role>
-        <description>Role for basic user</description>
-        <role-name>basic</role-name>
-    </security-role>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+    <!-- mappings for index -->
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
 
     <!-- mappings for aquarium pages -->
     <servlet>
@@ -79,7 +73,7 @@
         <url-pattern>/finance</url-pattern>
     </servlet-mapping>
 
-    <!-- mapping for user account apge -->
+    <!-- mapping for user account page -->
     <servlet>
         <servlet-name>user account page</servlet-name>
         <jsp-file>/WEB-INF/jsp/user/userAccount.jsp</jsp-file>
@@ -89,6 +83,16 @@
         <url-pattern>/myAccount</url-pattern>
     </servlet-mapping>
 
+    <!-- mapping for user admin menu page -->
+    <servlet>
+        <servlet-name>admin menu</servlet-name>
+        <jsp-file>/WEB-INF/jsp/user/admin/adminMenu.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin menu</servlet-name>
+        <url-pattern>/adminMenu</url-pattern>
+    </servlet-mapping>
+
     <!-- mapping for log in -->
     <servlet>
         <servlet-name>log in</servlet-name>
@@ -96,7 +100,17 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>log in</servlet-name>
-        <url-pattern>/login</url-pattern>
+        <url-pattern>/loginPage</url-pattern>
+    </servlet-mapping>
+
+    <!-- mapping for log in fail -->
+    <servlet>
+        <servlet-name>log in fail</servlet-name>
+        <jsp-file>/WEB-INF/jsp/loginFail.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>log in fail</servlet-name>
+        <url-pattern>/loginFail</url-pattern>
     </servlet-mapping>
 
     <!-- mapping for log out -->
@@ -127,6 +141,16 @@
     <servlet-mapping>
         <servlet-name>404</servlet-name>
         <url-pattern>/404</url-pattern>
+    </servlet-mapping>
+
+    <!-- mapping error pages -->
+    <servlet>
+        <servlet-name>403</servlet-name>
+        <jsp-file>/WEB-INF/jsp/errors/403.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>403</servlet-name>
+        <url-pattern>/403</url-pattern>
     </servlet-mapping>
 
 

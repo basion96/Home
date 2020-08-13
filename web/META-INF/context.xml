@@ -32,19 +32,4 @@
 			driverClassName="com.mysql.jdbc.Driver"
 			url="jdbc:mysql://10.0.0.171:3306/user_store?useLegacyDatetimeCode=false&#38;serverTimezone=UTC"
 	/>
-
-<!--
-	<Realm className="org.apache.catalina.realm.JDBCRealm" 
-    	driverName="com.mysql.jdbc.Driver" 
-   		connectionURL="jdbc:mysql://127.0.0.1:30001/BookLibrary?useLegacyDatetimeCode=false&#38;serverTimezone=UTC"
-   		connectionName="root"
-   		connectionPassword=""
-       		userTable="user" 
-       		userNameCol="username" 
-       		userCredCol="u_password"
-  		userRoleTable="userRoleMulti" 
-  		roleNameCol="role"
-  	/>
--->
-
 </Context>

@@ -11,13 +11,10 @@ public class DAO {
 
         String db = null;
         switch (database){
-            case FISH_DATABASE: db = "houseDB";
-                break;
-            case HARDWARE_DATABASE: db = "hardware_database";
-                break;
-            case FINANCE_DATABASE: db = "finance_database";
+            case HOUSE_DATABASE: db = "houseDB";
                 break;
             case USER_STORE: db = "user-store";
+                break;
         }
 
         DataSource datasource;

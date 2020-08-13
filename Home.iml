@@ -35,5 +35,6 @@
     <orderEntry type="library" scope="PROVIDED" name="taglibs-standard-spec-1.2.5" level="project" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="JDA-4.1.1_166-withDependencies" level="project" />
   </component>
 </module>

@@ -26,6 +26,28 @@
       <sshConfig authType="PASSWORD" host="10.0.0.49" id="96f8776f-3335-45c4-baa8-3ccbb7163bfd" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
       <sshConfig authType="PASSWORD" host="10.0.0.49" id="673b7992-2f96-49b6-80d7-fd526ae8d8a4" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
       <sshConfig authType="PASSWORD" host="10.0.0.49" id="ea9e571f-d878-46d0-a14d-6f0f3ff71f21" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="d86ff87e-c3ad-4b1a-b60f-3eb4cc048fb0" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="6b8168d1-5603-452c-85e6-893873962f39" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="d0a77d05-0505-452b-a15e-c365b2cd7846" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="a1df319d-a56b-4933-a1df-d545cfe5a11f" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="7288d41b-5a2d-4f3d-9f6a-e6e0eacc5f51" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="1cb8f101-8eed-4cd6-a475-f172d80acd0d" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="99621172-efb7-4cb9-93d6-348238deaae7" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="c7be0ee7-f71c-407b-b1b9-9be60f08e0f3" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="b364930f-a962-4772-9171-2daf8665f5ac" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="db740b8d-9368-40ee-9f15-fdb7d59809de" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="0f52be21-e262-4076-9604-75e3614a1ab0" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="78c4241e-6dba-426b-96e3-0e0ac072a7cc" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="42f5a7c4-4a30-497e-8a24-0fab3f162ba4" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="c70816cb-4a5d-4c3b-8efb-235235e82671" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="dd9c041e-af48-43da-8108-8e27d7e001eb" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="a64fdf23-437f-44fc-9637-cb8db6a83bf6" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="ecb5ddfc-cefb-4a5e-8345-1a671f9cc558" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="75b890ec-d755-41aa-aca7-911d04f1f35b" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="ee15c090-88be-4b56-80a2-3bc627e4b1d5" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="68c668aa-49c1-4411-b542-44d3f13dab92" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="6a7cf05c-1ca6-499d-b251-85af896a05a9" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="10.0.0.49" id="abe75d1f-5aa6-4460-ace1-cbb71efec055" port="22" customName="RaspberryPi" nameFormat="CUSTOM" />
     </configs>
   </component>
 </project>

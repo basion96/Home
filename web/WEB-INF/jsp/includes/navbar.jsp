@@ -13,7 +13,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/">Home</a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/index">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,6 +59,10 @@
                                     ${pageContext.request.userPrincipal.name}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                <c:if test="${pageContext.request.isUserInRole('admin')}">
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/adminMenu">Admin menu</a>
+                                    <div class="dropdown-divider"></div>
+                                </c:if>
                                 <a class="dropdown-item" href="${pageContext.request.contextPath}/myAccount">Account</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="${pageContext.request.contextPath}/logout">log out</a>

@@ -15,9 +15,10 @@
 	  <jsp:include page="/navbar"/>
   </head>
   <body style="background-color: #D4E8D9">
+  <!--Invalidates the current session-->
+  <% session.invalidate();%>
+  <% request.logout();%>
 
-    <!--Invalidates the current session-->
-	<% session.invalidate();%>
   	<div class="jumbotron">
   		<h1>See you later!</h1>
   		<p>You're now logged out. click the button below to return to the home page.</p>

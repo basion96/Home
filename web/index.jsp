@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
     <head>
+        <%if(!request.isUserInRole("admin") || !request.isUserInRole("basic")){response.sendRedirect(request.getContextPath() + "/403");}%>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -20,7 +21,7 @@
     </head>
     <body>
         <div class="jumbotron" style="text-align: center">
-            <h1 class="display-4">Welcome home,</h1>
+            <h1 class="display-4">Welcome home, ${pageContext.request.userPrincipal.name}</h1>
             <p class="lead">What would you like to get up to today?</p>
         </div>
 

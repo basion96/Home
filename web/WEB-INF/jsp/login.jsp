@@ -5,6 +5,7 @@
   Time: 4:27 pm
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head><meta charset="utf-8">
@@ -22,15 +23,22 @@
             <h1>Login</h1>
         </div>
 
+    <c:if test="${param.keySet().contains(\"failedAttempt\")}">
+        <div class="alert alert-warning" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Error:</strong> Username or password incorrect.
+        </div>
+    </c:if>
+
         <div class="container">
-            <form action="j_security_check" method="POST">
+            <form action="${pageContext.request.contextPath}/login" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="j_username" required="true" aria-describedby="emailHelp" placeholder="Enter username">
+                    <input class="form-control" id="username" name="username" placeholder="Enter username" required="true" type="text">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="j_password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-primary">log in</button>
             </form>
