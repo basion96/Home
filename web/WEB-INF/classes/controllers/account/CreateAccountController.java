@@ -21,7 +21,7 @@ public class CreateAccountController extends HttpServlet {
         UserAuthenticator accDB = new UserAuthenticator();
         if(!accDB.usernameExists(request.getParameter("username"), true)){
             accDB.insertPendingUser(request.getParameter("username"), request.getParameter("password"));
-            response.sendRedirect(request.getContextPath() + "/index?status=pending");
+            response.sendRedirect(request.getContextPath() + "/loginPage?status=pending");
         }
         else{
             request.setAttribute("username", request.getParameter("username"));

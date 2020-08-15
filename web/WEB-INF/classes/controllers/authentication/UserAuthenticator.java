@@ -2,6 +2,7 @@ package controllers.authentication;
 
 import database.DAO;
 import database.Database;
+import objects.User;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -121,7 +122,7 @@ public class UserAuthenticator extends DAO {
         String salt = generateSalt();
         String hashedPassword = getSHAString(salt + getSHAString(password));
         try (Connection conn = getConnection(Database.USER_STORE)){
-            PreparedStatement statement = conn.prepareStatement("INSERT INTO pending_users VALUES (?,?,?)");
+            PreparedStatement statement = conn.prepareStatement("CALL addPendingUser(?,?,?)");
             statement.setString(1, username);
             statement.setString(2, salt);
             statement.setString(3, hashedPassword);
@@ -167,5 +168,33 @@ public class UserAuthenticator extends DAO {
         } catch (SQLException e){
             e.printStackTrace();
         }
+    }
+
+    public User getUserDetails(String username){
+        User user = new User();
+        try(Connection conn = getConnection(Database.USER_STORE)){
+            PreparedStatement statement = conn.prepareStatement("SELECT user_name, creation_date FROM users WHERE user_name = ?");
+            statement.setString(1, username);
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                user.setName(rs.getString("user_name"));
+                user.setAccountCreation(rs.getString("creation_date"));
+
+                PreparedStatement statement2 = conn.prepareStatement("SELECT role_name FROM user_roles WHERE user_name = ?");
+                statement2.setString(1, username);
+                ResultSet rs2 = statement2.executeQuery();
+                while(rs2.next()){
+                    user.addRole(rs2.getString("role_name"));
+                }
+                statement2.close();
+                rs2.close();
+            }
+            statement.close();
+            rs.close();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return user;
     }
 }

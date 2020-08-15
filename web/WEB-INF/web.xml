@@ -73,16 +73,6 @@
         <url-pattern>/finance</url-pattern>
     </servlet-mapping>
 
-    <!-- mapping for user account page -->
-    <servlet>
-        <servlet-name>user account page</servlet-name>
-        <jsp-file>/WEB-INF/jsp/user/userAccount.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>user account page</servlet-name>
-        <url-pattern>/myAccount</url-pattern>
-    </servlet-mapping>
-
     <!-- mapping for user admin menu page -->
     <servlet>
         <servlet-name>admin menu</servlet-name>

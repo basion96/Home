@@ -28,8 +28,6 @@ public class UserRoleFilter implements Filter {
 
     public void init(FilterConfig cfg) throws ServletException {
 
-        // TODO: fetch any services we need to determine the user ?
-        // e.g. database handler, ldap service, from session attribute or servlet context ?
     }
 
     public void doFilter(ServletRequest req, ServletResponse response, FilterChain next) throws IOException, ServletException {

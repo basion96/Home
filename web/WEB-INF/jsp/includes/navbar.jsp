@@ -31,6 +31,7 @@
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/aquariums/addTank">Add tank</a>
                         </div>
                     </li>
+                    <!--
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="hardwareDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Hardware
@@ -43,6 +44,7 @@
                             <a class="dropdown-item" href="#">Hard drives</a>
                         </div>
                     </li>
+                    -->
                 </ul>
             </div>
 

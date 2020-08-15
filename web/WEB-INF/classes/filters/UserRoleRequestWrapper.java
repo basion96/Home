@@ -41,4 +41,15 @@ public class UserRoleRequestWrapper extends HttpServletRequestWrapper {
             }
         };
     }
+
+    @Override
+    public String toString(){
+        String user;
+        user = this.user + ", ";
+        for (String role: roles) {
+            user += role + ", ";
+        }
+
+        return user;
+    }
 }

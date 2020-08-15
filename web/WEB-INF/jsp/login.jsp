@@ -29,6 +29,12 @@
             <strong>Error:</strong> Username or password incorrect.
         </div>
     </c:if>
+        <c:if test="${param.keySet().contains(\"status\")}">
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Success:</strong> Account is pending approval.
+            </div>
+        </c:if>
 
         <div class="container">
             <form action="${pageContext.request.contextPath}/login" method="post">
